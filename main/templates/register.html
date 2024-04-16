@@ -1,0 +1,29 @@
+{%  extends 'base.html' %}
+  {% block body %}
+  <table id="main">
+     <tr>
+      <td id="header">
+        <h1>ADD USER</h1>
+</tr>
+      <tr>
+     
+        <form id="addForm" method="POST">
+{% csrf_token %}
+{%for fm in form %}
+
+      <tr>
+ <td id="table-form">
+{{ fm.label_tag }}{{fm}}{{fm.errors}}
+{% endfor %}</td>
+
+      </tr>
+
+      <tr>
+ <td id="table-form">
+          <input type="submit" class="btn btn-success" value="Save"></td>
+        </form>
+    
+      </tr>
+  </table>
+  
+  {% endblock body %}
